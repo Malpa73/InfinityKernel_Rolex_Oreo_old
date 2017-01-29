@@ -40,6 +40,10 @@ obj-$(CONFIG_INT340X_THERMAL)  += int340x_thermal/
 obj-$(CONFIG_ST_THERMAL)	+= st/
 obj-$(CONFIG_TEGRA_SOCTHERM)	+= tegra_soctherm.o
 obj-$(CONFIG_THERMAL_TSENS8974)	+= msm-tsens.o
+<<<<<<< HEAD
+=======
+obj-$(CONFIG_INTELLI_THERMAL)	+= intelli/
+>>>>>>> 0d1e10c... fixup Intellithermal to compile inline
 obj-$(CONFIG_THERMAL_QPNP)	+= qpnp-temp-alarm.o
 obj-$(CONFIG_THERMAL_QPNP_ADC_TM)	+= qpnp-adc-tm.o
 obj-$(CONFIG_THERMAL_MONITOR)	+= msm_thermal.o msm_thermal-dev.o
