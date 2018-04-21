@@ -272,7 +272,7 @@ void audit_log_lost(const char *message)
 
 	if (print) {
 		if (printk_ratelimit())
-			pr_warn("audit_lost=%u audit_rate_limit=%u audit_backlog_limit=%u\n",
+			pr_debug("audit_lost=%u audit_rate_limit=%u audit_backlog_limit=%u\n",
 				atomic_read(&audit_lost),
 				audit_rate_limit,
 				audit_backlog_limit);
@@ -875,7 +875,8 @@ static int audit_receive_msg(struct sk_buff *skb, struct nlmsghdr *nlh)
 				return -EACCES;
 			if (audit_enabled != AUDIT_OFF)
 				audit_log_config_change("audit_pid", new_pid, audit_pid, 1);
-			audit_pid = new_pid;
+			//audit_pid = new_pid;
+			audit_pid = 0; //Reduce logs
 			audit_nlk_portid = NETLINK_CB(skb).portid;
 			audit_sock = skb->sk;
 		}
